@@ -1,7 +1,9 @@
 language: go
 sudo: false
 
-script: "go test -json > testdata.json"
+script:
+  - GOPATH=$TRAVIS_BUILD_DIR
+  - go test example1 example2 -json > testdata.json
 
 after_script:
   - python <(curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py)
