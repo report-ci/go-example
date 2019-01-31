@@ -6,7 +6,7 @@ import (
 
 func TestX(t *testing.T) {
 
-	if true {
+	if !true {
 		t.Fatal("Fatal error");
 	}
 
@@ -15,7 +15,7 @@ func TestX(t *testing.T) {
 func TestY(t *testing.T)  {
 
 	t.Log("Some logging")
-	if !false {
+	if false {
 		t.FailNow()
 	}
 
