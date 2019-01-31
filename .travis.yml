@@ -1,7 +1,7 @@
 language: go
 sudo: false
 
-script: "go test example1 example2 -json > testdata.json"
+script: "go test -json > testdata.json"
 
 after_script:
   - python <(curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py)
