@@ -5,7 +5,7 @@ import (
 )
 
 func Test1(t *testing.T) {
-	if 4 != 4 {
+	if 3 != 4 {
 		t.Error("Expected 2 + 2 to equal 4")
 	}
 }
@@ -15,7 +15,7 @@ func Test2(t *testing.T)  {
 		t.Fail()
 	}
 
-	//t.Error("Some other string {}" , 42)
+	t.Error("Some other string {}" , 42)
 
 	t.Log("foobar, log")
 }
