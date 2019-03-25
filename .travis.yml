@@ -6,7 +6,7 @@ script:
   - go test example1 example2 -json > testdata.json 2> build.log
 
 after_failure:
-  - curl -s https://raw.githubusercontent.com/report-ci/scripts/master/annotate.py | python - --tool go --input build.log
+  - python annotate.py --tool go --input build.log
 
 after_script:
   - python <(curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py)
