@@ -3,7 +3,10 @@ sudo: false
 
 script:
   - GOPATH=$TRAVIS_BUILD_DIR
-  - go test example1 example2 -json > testdata.json
+  - go test example1 example2 -json > testdata.json 2> build.log
+
+after_failure:
+  - curl -s https://raw.githubusercontent.com/report-ci/scripts/master/annotate.py | python - --tool go --input build.log
 
 after_script:
   - python <(curl -s https://raw.githubusercontent.com/report-ci/scripts/master/upload.py)
