@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestX(t *testing.T) {
+func TestX(t *testing.T2) {
 
 	if !true {
 		t.Fatal("Fatal error");
